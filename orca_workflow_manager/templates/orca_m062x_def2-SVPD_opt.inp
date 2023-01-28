@@ -1,5 +1,9 @@
 !M062X def2-SVPD DEFGRID3 TIGHTSCF Opt Freq 
 
+{%for block in additional_blocks%}
+{{ block }}
+{%endfor%}
+
 %geom
 MaxIter 300
 end

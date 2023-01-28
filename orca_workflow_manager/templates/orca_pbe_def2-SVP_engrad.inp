@@ -1,5 +1,9 @@
 !PBE def2-SVP TIGHTSCF engrad 
 
+{%for block in additional_blocks%}
+{{ block }}
+{%endfor%}
+
 %pal
 nproc {{ nproc }}
 end

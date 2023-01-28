@@ -1,18 +1,24 @@
-!M062X def2-SVPD DEFGRID3 TIGHTSCF Engrad Freq
+!B3LYP def2-SVPD TIGHTSCF D3 Opt Freq
 
 {%for block in additional_blocks%}
 {{ block }}
 {%endfor%}
+
+%geom
+MaxIter 300
+end
 
 %pal
 nproc {{ nproc }}
 end
 
 %scf
-AutoTRAH       true
+AutoTRAH  
+     true
 AutoTRAHTol    1.125
 AutoTRAHIter   500
 AutoTRAHNInter 10
 end
 
 * xyzfile {{ charge }} {{ multiplicity }} {{ xyzfile }}
+{{ NEWLINE }}

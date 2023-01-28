@@ -1,4 +1,12 @@
-!B3LYP def2-QZVPPD TIGHTSCF D4 engrad Opt Freq
+!B3LYP def2-TZVPD TIGHTSCF D3 Opt Freq
+
+{%for block in additional_blocks%}
+{{ block }}
+{%endfor%}
+
+%geom
+MaxIter 300
+end
 
 %pal
 nproc {{ nproc }}
