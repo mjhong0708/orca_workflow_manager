@@ -1,0 +1,14 @@
+!M062X def2-SVPD DEFGRID3 TIGHTSCF Engrad Freq
+
+%pal
+nproc {{ nproc }}
+end
+
+%scf
+AutoTRAH       true
+AutoTRAHTol    1.125
+AutoTRAHIter   500
+AutoTRAHNInter 10
+end
+
+* xyzfile {{ charge }} {{ multiplicity }} {{ xyzfile }}

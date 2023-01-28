@@ -1,0 +1,16 @@
+!B3LYP def2-QZVPPD TIGHTSCF D4 engrad Opt Freq
+
+%pal
+nproc {{ nproc }}
+end
+
+%scf
+AutoTRAH  
+     true
+AutoTRAHTol    1.125
+AutoTRAHIter   500
+AutoTRAHNInter 10
+end
+
+* xyzfile {{ charge }} {{ multiplicity }} {{ xyzfile }}
+{{ NEWLINE }}

@@ -1,0 +1,37 @@
+[project]
+name = "orca_workflow_manager"
+dependencies = [
+    "ase",
+    "cclib",
+    "numpy",
+    "jinja2",
+    'importlib-metadata; python_version>"3.8"',
+]
+dynamic = ["version"]
+
+[project.optional-dependencies]
+dev = ["flake8", "black", "isort", "jupyter", "pytest", "ruff"]
+
+[project.scripts]
+save_db = "orca_workflow_manager.db:save_db"
+update_db_status = "orca_workflow_manager.db:update_db_status"
+
+[tool.setuptools.packages.find]
+include = ["orca_workflow_manager"]
+exclude = ["dev"]
+
+[tool.setuptools.dynamic]
+version = {attr = "orca_workflow_manager.__version__"}
+
+[tool.black]
+line-length = 120
+
+[tool.ruff]
+line-length = 120
+select = ["W", "F", "E", "B", "I"]
+
+[build-system]
+requires = ["setuptools", "setuptools-scm"]
+build-backend = "setuptools.build_meta"
+
+
