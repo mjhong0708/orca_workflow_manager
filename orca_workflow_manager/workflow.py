@@ -23,7 +23,9 @@ class ORCAWorkflow:
             db_path: Path to the database file or url
             calc_root: Path to the root directory for calculations
         """
-        self.db_path = str(Path(db_path).absolute())
+        if "postgres" not in db_path:
+            db_path = str(Path(db_path).absolute())
+        self.db_path = db_path
         self.calc_root = Path(calc_root)
         self.orca_template = orca_template
 
