@@ -20,3 +20,4 @@ AutoTRAHNInter 10
 end
 
 * xyzfile {{ charge }} {{ multiplicity }} {{ xyzfile }}
+{{ NEWLINE }}
